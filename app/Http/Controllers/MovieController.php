@@ -11,6 +11,14 @@ class MovieController extends Controller
         $welcome_message = 'Lista dei desideri';
         $movies = Movie::all();
 
-        return view('home', compact('welcome_message', 'movies'));
+        return view('movies.index', compact('welcome_message', 'movies'));
+    }
+
+    public  function show($id)
+    {
+        $welcome_message = 'Lista dei desideri';
+        $movie = Movie::findOrFail($id);
+
+        return view('movies.show', compact('welcome_message', 'movie'));
     }
 }
