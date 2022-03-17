@@ -11,11 +11,26 @@
 
 <body>
 
-	<h1>{{$welcome_message}}</h1>
 
-	@foreach ($movies as $movie)
-	<h3>{{$movie->title}}</h3>
-	@endforeach
+	<div class="container">
+		<h1 class="my-3">{{$welcome_message}}</h1>
+		<div class="row gy-4 justify-content-center">
+			@foreach ($movies as $movie)
+			<div class="col-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">{{$movie->title}}</h5>
+						<h6 class="card-subtitle mb-2 text-muted">Titolo originale: {{$movie->original_title}}</h6>
+						<h6 class="card-subtitle mb-2">Nazione: {{$movie->nationality}}</h6>
+						<h6 class="card-subtitle mb-2">Data di pubblicazione: {{$movie->date}}</h6>
+						<h6 class="card-subtitle mb-2">Voto: {{$movie->vote}}</h6>
+					</div>
+				</div>
+			</div>
+			@endforeach
+		</div>
+	</div>
+
 </body>
 
 </html>
