@@ -11,8 +11,6 @@ class MovieController extends Controller
         $welcome_message = 'Benvenuto sul mio sito';
         $movies = Movie::all();
 
-        dd($movies);
-
-        return view('home', compact('welcome_message'));
+        return view('home', compact('welcome_message', 'movies'));
     }
 }
